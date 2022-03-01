@@ -103,6 +103,7 @@ GEM
     msgpack (1.4.5)
     mysql2 (0.5.3)
     nio4r (2.5.8)
+    nokogiri (1.13.3-x86_64-darwin)
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
