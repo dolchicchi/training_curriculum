@@ -27,12 +27,13 @@ class CalendarsController < ApplicationController
 
     @week_days = []
 
+    #今日から一週間の予定をDBから引っ張って代入
     plans = Plan.where(date: @todays_date..@todays_date + 6)
 
     7.times do |x|
       today_plans = []
       plans.each do |plan|
-        today_plans.push(plan.plan) if plan.date == @todays_date + x
+        today_plans.push(plan.plan) if plan.date == @todays_date + x #もし取り出した予定の日付と今日の日付＋繰り返し回数が等しければ予定をtday_plansの配列に入れる
       end
 
 
@@ -48,9 +49,6 @@ class CalendarsController < ApplicationController
         wday: wdays[wday_num]
       }
       
-
-      days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans}
-
       @week_days.push(days)
     end
 
